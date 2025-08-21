@@ -86,6 +86,7 @@ export default function Home() {
               <button onClick={() => scrollToSection('home')} className="hover:text-ai-cyan transition-colors duration-300">Home</button>
               <button onClick={() => scrollToSection('about')} className="hover:text-ai-cyan transition-colors duration-300">About</button>
               <button onClick={() => scrollToSection('instructions')} className="hover:text-ai-cyan transition-colors duration-300">Instructions</button>
+              <button onClick={() => scrollToSection('sponsors')} className="hover:text-ai-cyan transition-colors duration-300">Sponsors</button>
               <button onClick={() => scrollToSection('contact')} className="hover:text-ai-cyan transition-colors duration-300">Contact</button>
             </div>
             
@@ -108,6 +109,7 @@ export default function Home() {
                 <button onClick={() => scrollToSection('home')} className="text-left hover:text-ai-cyan transition-colors duration-300">Home</button>
                 <button onClick={() => scrollToSection('about')} className="text-left hover:text-ai-cyan transition-colors duration-300">About</button>
                 <button onClick={() => scrollToSection('instructions')} className="text-left hover:text-ai-cyan transition-colors duration-300">Instructions</button>
+                <button onClick={() => scrollToSection('sponsors')} className="text-left hover:text-ai-cyan transition-colors duration-300">Sponsors</button>
                 <button onClick={() => scrollToSection('contact')} className="text-left hover:text-ai-cyan transition-colors duration-300">Contact</button>
               </div>
             </div>
@@ -155,6 +157,27 @@ export default function Home() {
               Register Now - Limited Seats!
               <Rocket className="ml-2" size={16} />
             </Button>
+            
+            {/* Sponsor Logos */}
+            <div className="mt-16 animate-fade-in">
+              <p className="text-gray-400 text-sm mb-6">Proudly Sponsored By</p>
+              <div className="flex items-center justify-center space-x-12">
+                <div className="w-20 h-20 bg-white/10 rounded-xl p-3 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-all duration-300">
+                  <img 
+                    src="/assets/sponsors/techcorp-logo.png" 
+                    alt="TechCorp" 
+                    className="w-full h-full object-contain opacity-80 hover:opacity-100 transition-opacity duration-300"
+                  />
+                </div>
+                <div className="w-20 h-20 bg-white/10 rounded-xl p-3 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-all duration-300">
+                  <img 
+                    src="/assets/sponsors/innovatelabs-logo.png" 
+                    alt="InnovateLabs" 
+                    className="w-full h-full object-contain opacity-80 hover:opacity-100 transition-opacity duration-300"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -218,6 +241,67 @@ export default function Home() {
                 <Button className="ai-gradient px-8 py-4 rounded-full text-white font-semibold text-lg hover:scale-105 transform transition-all duration-300 shadow-xl">
                   <Users className="mr-2" size={20} />
                   Register Now - Limited Seats Available!
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Sponsors Section */}
+      <section id="sponsors" className="py-20 fade-on-scroll">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gradient">Our Sponsors</h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Powering innovation with industry-leading partners who believe in the future of AI.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+            <Card className="glass-effect border-0 hover:scale-105 transform transition-all duration-300">
+              <CardContent className="p-8 text-center">
+                <div className="w-24 h-24 mx-auto mb-6 bg-white/10 rounded-2xl p-4 backdrop-blur-sm border border-white/20">
+                  <img 
+                    src="/assets/sponsors/techcorp-logo.png" 
+                    alt="TechCorp" 
+                    className="w-full h-full object-contain opacity-90"
+                  />
+                </div>
+                <h3 className="text-2xl font-bold mb-4 text-ai-cyan">TechCorp</h3>
+                <p className="text-gray-300">
+                  Leading technology solutions provider, pioneering the future of enterprise AI applications and cloud infrastructure.
+                </p>
+              </CardContent>
+            </Card>
+            
+            <Card className="glass-effect border-0 hover:scale-105 transform transition-all duration-300">
+              <CardContent className="p-8 text-center">
+                <div className="w-24 h-24 mx-auto mb-6 bg-white/10 rounded-2xl p-4 backdrop-blur-sm border border-white/20">
+                  <img 
+                    src="/assets/sponsors/innovatelabs-logo.png" 
+                    alt="InnovateLabs" 
+                    className="w-full h-full object-contain opacity-90"
+                  />
+                </div>
+                <h3 className="text-2xl font-bold mb-4 text-ai-cyan">InnovateLabs</h3>
+                <p className="text-gray-300">
+                  Research and development company focused on breakthrough AI technologies and machine learning innovations.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+          
+          {/* Partnership CTA */}
+          <div className="text-center mt-16">
+            <Card className="glass-effect border-0 max-w-2xl mx-auto">
+              <CardContent className="p-6">
+                <h3 className="text-2xl font-bold mb-3 text-gradient">Become a Sponsor</h3>
+                <p className="text-gray-300 mb-4">
+                  Join us in shaping the future of AI innovation. Partner with Code Vault and reach tomorrow's tech leaders.
+                </p>
+                <Button variant="outline" className="border-ai-cyan text-ai-cyan hover:bg-ai-cyan hover:text-white transition-all duration-300">
+                  Partnership Opportunities
                 </Button>
               </CardContent>
             </Card>
