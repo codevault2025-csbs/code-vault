@@ -328,13 +328,15 @@ export default function Home() {
           <div className="text-center mt-16">
             <Card className="glass-effect border-0 max-w-2xl mx-auto">
               <CardContent className="p-6">
-                <h3 className="text-2xl font-bold mb-3 text-gradient">Become a Sponsor</h3>
-                <p className="text-gray-300 mb-4">
-                  Join us in shaping the future of AI innovation. Partner with Code Vault and reach tomorrow's tech leaders.
-                </p>
-                <Button variant="outline" className="border-ai-cyan text-ai-cyan hover:bg-ai-cyan hover:text-white transition-all duration-300">
+                <h3 className="text-2xl font-bold mb-6 text-gradient">Become a Sponsor</h3>
+                <a 
+                  href="https://sponsor-partnership.example.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block border-2 border-ai-cyan text-ai-cyan hover:bg-ai-cyan hover:text-white transition-all duration-300 px-6 py-3 rounded-lg font-semibold"
+                >
                   Partnership Opportunities
-                </Button>
+                </a>
               </CardContent>
             </Card>
           </div>
