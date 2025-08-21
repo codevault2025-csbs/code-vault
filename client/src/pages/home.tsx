@@ -255,15 +255,18 @@ export default function Home() {
           {/* Registration CTA */}
           <div className="text-center mt-16">
             <Card className="glass-effect border-0 max-w-2xl mx-auto">
-              <CardContent className="p-8">
-                <h3 className="text-3xl font-bold mb-4 text-gradient">Ready to Code the Future?</h3>
-                <p className="text-gray-300 mb-6">
+              <CardContent className="p-6 sm:p-8">
+                <h3 className="text-2xl sm:text-3xl font-bold mb-4 text-gradient">Ready to Code the Future?</h3>
+                <p className="text-gray-300 mb-6 text-sm sm:text-base">
                   Limited seats available. Secure your spot in this premier AI hackathon experience.
                 </p>
-                <Button className="ai-gradient px-8 py-4 rounded-full text-white font-semibold text-lg hover:scale-105 transform transition-all duration-300 shadow-xl">
-                  <Users className="mr-2" size={20} />
-                  Register Now - Limited Seats Available!
-                </Button>
+                <div className="flex justify-center">
+                  <Button className="ai-gradient px-6 sm:px-8 py-3 sm:py-4 rounded-full text-white font-semibold text-sm sm:text-lg hover:scale-105 transform transition-all duration-300 shadow-xl w-full sm:w-auto max-w-xs sm:max-w-none">
+                    <Users className="mr-2" size={16} />
+                    <span className="hidden sm:inline">Register Now - Limited Seats Available!</span>
+                    <span className="sm:hidden">Register Now!</span>
+                  </Button>
+                </div>
               </CardContent>
             </Card>
           </div>
