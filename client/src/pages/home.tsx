@@ -412,22 +412,22 @@ export default function Home() {
               <CardContent className="p-8 text-center">
                 <h3 className="text-2xl font-bold mb-6 text-gradient">Rules & Guidelines</h3>
                 <div className="grid md:grid-cols-2 gap-6">
-                  <div>
+                  <div className="text-center">
                     <h4 className="text-lg font-semibold text-ai-cyan mb-3">Allowed Technologies</h4>
                     <ul className="text-gray-300 space-y-2">
-                      <li className="flex items-center justify-center md:justify-start"><Check className="text-green-400 mr-2" size={16} />Any programming language</li>
-                      <li className="flex items-center justify-center md:justify-start"><Check className="text-green-400 mr-2" size={16} />Open-source libraries & frameworks</li>
-                      <li className="flex items-center justify-center md:justify-start"><Check className="text-green-400 mr-2" size={16} />Pre-existing datasets</li>
-                      <li className="flex items-center justify-center md:justify-start"><Check className="text-green-400 mr-2" size={16} />Cloud services & APIs</li>
+                      <li className="flex items-center justify-center"><Check className="text-green-400 mr-2" size={16} />Any programming language</li>
+                      <li className="flex items-center justify-center"><Check className="text-green-400 mr-2" size={16} />Open-source libraries & frameworks</li>
+                      <li className="flex items-center justify-center"><Check className="text-green-400 mr-2" size={16} />Pre-existing datasets</li>
+                      <li className="flex items-center justify-center"><Check className="text-green-400 mr-2" size={16} />Cloud services & APIs</li>
                     </ul>
                   </div>
-                  <div>
+                  <div className="text-center">
                     <h4 className="text-lg font-semibold text-ai-cyan mb-3">Evaluation Criteria</h4>
                     <ul className="text-gray-300 space-y-2">
-                      <li className="flex items-center justify-center md:justify-start"><Star className="text-yellow-400 mr-2" size={16} />Innovation & Creativity</li>
-                      <li className="flex items-center justify-center md:justify-start"><Star className="text-yellow-400 mr-2" size={16} />Technical Implementation</li>
-                      <li className="flex items-center justify-center md:justify-start"><Star className="text-yellow-400 mr-2" size={16} />Problem-solving Approach</li>
-                      <li className="flex items-center justify-center md:justify-start"><Star className="text-yellow-400 mr-2" size={16} />Presentation Quality</li>
+                      <li className="flex items-center justify-center"><Star className="text-yellow-400 mr-2" size={16} />Innovation & Creativity</li>
+                      <li className="flex items-center justify-center"><Star className="text-yellow-400 mr-2" size={16} />Technical Implementation</li>
+                      <li className="flex items-center justify-center"><Star className="text-yellow-400 mr-2" size={16} />Problem-solving Approach</li>
+                      <li className="flex items-center justify-center"><Star className="text-yellow-400 mr-2" size={16} />Presentation Quality</li>
                     </ul>
                   </div>
                 </div>
