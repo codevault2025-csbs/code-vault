@@ -147,7 +147,7 @@ export default function Home() {
         <div className="absolute top-1/2 right-1/3 w-2 h-2 bg-ai-purple rounded-full animate-orbit opacity-50" style={{animationDelay: '-10s'}}></div>
         
         <div className="container mx-auto px-4 sm:px-6 text-center relative z-10 max-w-full">
-          <div className="animate-fade-in">
+          <div className="animate-fade-in pt-20 md:pt-24">
             <div className="w-32 h-32 ai-gradient rounded-2xl mx-auto mb-8 flex items-center justify-center animate-pulse-glow">
               <Brain className="text-white" size={60} />
             </div>
