@@ -1,0 +1,546 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Vault - AI Hackathon 2025</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'ai-purple': '#6366f1',
+                        'ai-blue': '#3b82f6',
+                        'ai-pink': '#ec4899',
+                        'ai-cyan': '#06b6d4',
+                        'ai-dark': '#0f0f23',
+                        'ai-darker': '#1e1b4b',
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                        'slide-up': 'slideUp 0.8s ease-out forwards',
+                        'fade-in': 'fadeIn 1s ease-out forwards',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        glow: {
+                            'from': { boxShadow: '0 0 20px #6366f1' },
+                            'to': { boxShadow: '0 0 30px #ec4899, 0 0 40px #06b6d4' },
+                        },
+                        slideUp: {
+                            'from': { transform: 'translateY(50px)', opacity: '0' },
+                            'to': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        fadeIn: {
+                            'from': { opacity: '0' },
+                            'to': { opacity: '1' },
+                        }
+                    }
+                }
+            }
+        };
+    </script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #0f0f23 0%, #1e1b4b 50%, #312e81 100%);
+        }
+        .ai-gradient {
+            background: linear-gradient(135deg, #6366f1 0%, #3b82f6 50%, #ec4899 100%);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #6366f1 0%, #ec4899 50%, #06b6d4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .glass-effect {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .section-hidden {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease-out;
+        }
+        .section-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="font-inter text-white gradient-bg min-h-screen">
+    <!-- @COMPONENT: NavigationBar -->
+    <nav class="fixed top-0 w-full z-50 glass-effect">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 ai-gradient rounded-lg flex items-center justify-center">
+                        <i class="fas fa-code text-white text-lg"></i>
+                    </div>
+                    <span class="text-2xl font-bold text-gradient">Code Vault</span>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="hover:text-ai-cyan transition-colors duration-300">Home</a>
+                    <a href="#about" class="hover:text-ai-cyan transition-colors duration-300">About</a>
+                    <a href="#instructions" class="hover:text-ai-cyan transition-colors duration-300">Instructions</a>
+                    <a href="#contact" class="hover:text-ai-cyan transition-colors duration-300">Contact</a>
+                </div>
+                
+                <div class="md:hidden">
+                    <button class="text-white focus:outline-none" onclick="toggleMobileMenu()">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+                <div class="flex flex-col space-y-3">
+                    <a href="#home" class="hover:text-ai-cyan transition-colors duration-300">Home</a>
+                    <a href="#about" class="hover:text-ai-cyan transition-colors duration-300">About</a>
+                    <a href="#instructions" class="hover:text-ai-cyan transition-colors duration-300">Instructions</a>
+                    <a href="#contact" class="hover:text-ai-cyan transition-colors duration-300">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- @END_COMPONENT: NavigationBar -->
+
+    <!-- @COMPONENT: HeroSection -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-20 left-10 w-72 h-72 ai-gradient rounded-full blur-3xl animate-float"></div>
+            <div class="absolute bottom-20 right-10 w-96 h-96 bg-ai-pink rounded-full blur-3xl animate-float" style="animation-delay: -2s;"></div>
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-ai-cyan rounded-full blur-3xl animate-float" style="animation-delay: -4s;"></div>
+        </div>
+        
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <div class="animate-fade-in">
+                <div class="w-32 h-32 ai-gradient rounded-2xl mx-auto mb-8 flex items-center justify-center animate-glow">
+                    <i class="fas fa-brain text-white text-5xl"></i>
+                </div>
+                
+                <h1 class="text-6xl md:text-8xl font-bold mb-6 text-gradient animate-slide-up">
+                    Code Vault
+                </h1>
+                
+                <p class="text-xl md:text-2xl text-gray-300 mb-8 animate-slide-up" style="animation-delay: 0.2s;">
+                    Unlock the Future of AI Innovation
+                </p>
+                
+                <div class="text-lg md:text-xl text-ai-cyan mb-12 animate-slide-up" style="animation-delay: 0.4s;">
+                    <div class="flex items-center justify-center space-x-4">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>September 19-20, 2025</span>
+                    </div>
+                    <div class="flex items-center justify-center space-x-4 mt-2">
+                        <i class="fas fa-trophy"></i>
+                        <span>Prize Pool: ₹50,000</span>
+                    </div>
+                </div>
+                
+                <button onclick="scrollToRegistration()" class="ai-gradient px-8 py-4 rounded-full text-white font-semibold text-lg hover:scale-105 transform transition-all duration-300 animate-slide-up shadow-2xl" style="animation-delay: 0.6s;">
+                    Register Now - Limited Seats!
+                    <i class="fas fa-rocket ml-2"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: HeroSection -->
+
+    <!-- @COMPONENT: AboutSection -->
+    <section id="about" class="py-20 section-hidden">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gradient">About Code Vault</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Join the ultimate 24-hour AI hackathon where innovation meets creativity. Build the future with cutting-edge technology.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Event Overview Card -->
+                <div class="glass-effect rounded-2xl p-8 hover:scale-105 transform transition-all duration-300">
+                    <div class="w-16 h-16 ai-gradient rounded-xl flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-lightbulb text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-center text-ai-cyan">Innovation Challenge</h3>
+                    <p class="text-gray-300 text-center">
+                        24 hours of intense coding, problem-solving, and AI innovation. Push the boundaries of what's possible with artificial intelligence.
+                    </p>
+                </div>
+                
+                <!-- Team Details Card -->
+                <div class="glass-effect rounded-2xl p-8 hover:scale-105 transform transition-all duration-300">
+                    <div class="w-16 h-16 ai-gradient rounded-xl flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-users text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-center text-ai-cyan">Team Formation</h3>
+                    <p class="text-gray-300 text-center">
+                        Teams of 2-4 members welcome. Individual participants will be matched with teams. Collaboration is key to success.
+                    </p>
+                </div>
+                
+                <!-- Prize Pool Card -->
+                <div class="glass-effect rounded-2xl p-8 hover:scale-105 transform transition-all duration-300">
+                    <div class="w-16 h-16 ai-gradient rounded-xl flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-trophy text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-center text-ai-cyan">Prize Pool</h3>
+                    <p class="text-gray-300 text-center">
+                        ₹50,000 total prize pool with multiple categories. Winners receive cash prizes, certificates, and exclusive mentorship opportunities.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Registration CTA -->
+            <div class="text-center mt-16">
+                <div class="glass-effect rounded-2xl p-8 max-w-2xl mx-auto">
+                    <h3 class="text-3xl font-bold mb-4 text-gradient">Ready to Code the Future?</h3>
+                    <p class="text-gray-300 mb-6">
+                        Limited seats available. Secure your spot in this premier AI hackathon experience.
+                    </p>
+                    <button onclick="scrollToRegistration()" class="ai-gradient px-8 py-4 rounded-full text-white font-semibold text-lg hover:scale-105 transform transition-all duration-300 shadow-xl">
+                        <i class="fas fa-user-plus mr-2"></i>
+                        Register Now - Limited Seats Available!
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: AboutSection -->
+
+    <!-- @COMPONENT: InstructionsSection -->
+    <section id="instructions" class="py-20 section-hidden">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gradient">Event Instructions</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Everything you need to know to participate and excel in Code Vault hackathon.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Registration Process -->
+                <div class="glass-effect rounded-xl p-6 hover:bg-white hover:bg-opacity-20 transition-all duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="w-8 h-8 bg-ai-purple rounded-full flex items-center justify-center mr-3">
+                            <span class="text-white font-bold">1</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-ai-cyan">Registration</h3>
+                    </div>
+                    <p class="text-gray-300">
+                        Complete online registration with team details. Individual participants will be assigned to teams during the event.
+                    </p>
+                </div>
+                
+                <!-- Check-in Process -->
+                <div class="glass-effect rounded-xl p-6 hover:bg-white hover:bg-opacity-20 transition-all duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="w-8 h-8 bg-ai-blue rounded-full flex items-center justify-center mr-3">
+                            <span class="text-white font-bold">2</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-ai-cyan">Check-in</h3>
+                    </div>
+                    <p class="text-gray-300">
+                        Arrive by 9:00 AM on September 19th. Bring valid ID, laptop, chargers, and any development tools you prefer.
+                    </p>
+                </div>
+                
+                <!-- Team Formation -->
+                <div class="glass-effect rounded-xl p-6 hover:bg-white hover:bg-opacity-20 transition-all duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="w-8 h-8 bg-ai-pink rounded-full flex items-center justify-center mr-3">
+                            <span class="text-white font-bold">3</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-ai-cyan">Team Setup</h3>
+                    </div>
+                    <p class="text-gray-300">
+                        Finalize teams (2-4 members max). Solo participants will be matched based on skills and interests.
+                    </p>
+                </div>
+                
+                <!-- Problem Statement -->
+                <div class="glass-effect rounded-xl p-6 hover:bg-white hover:bg-opacity-20 transition-all duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="w-8 h-8 bg-ai-cyan rounded-full flex items-center justify-center mr-3">
+                            <span class="text-white font-bold">4</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-ai-cyan">Problem Release</h3>
+                    </div>
+                    <p class="text-gray-300">
+                        AI-focused problem statements revealed at 10:00 AM. Choose your challenge and start coding immediately.
+                    </p>
+                </div>
+                
+                <!-- Development Phase -->
+                <div class="glass-effect rounded-xl p-6 hover:bg-white hover:bg-opacity-20 transition-all duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="w-8 h-8 bg-ai-purple rounded-full flex items-center justify-center mr-3">
+                            <span class="text-white font-bold">5</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-ai-cyan">Coding Marathon</h3>
+                    </div>
+                    <p class="text-gray-300">
+                        24-hour development phase with mentorship available. Meals, snacks, and refreshments provided throughout.
+                    </p>
+                </div>
+                
+                <!-- Submission & Demo -->
+                <div class="glass-effect rounded-xl p-6 hover:bg-white hover:bg-opacity-20 transition-all duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="w-8 h-8 bg-ai-blue rounded-full flex items-center justify-center mr-3">
+                            <span class="text-white font-bold">6</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-ai-cyan">Demo & Judging</h3>
+                    </div>
+                    <p class="text-gray-300">
+                        Submit projects by 9:00 AM on September 20th. Present 5-minute demos to expert judges for evaluation.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Rules & Guidelines -->
+            <div class="mt-16">
+                <div class="glass-effect rounded-2xl p-8">
+                    <h3 class="text-2xl font-bold mb-6 text-center text-gradient">Rules & Guidelines</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="text-lg font-semibold text-ai-cyan mb-3">Allowed Technologies</h4>
+                            <ul class="text-gray-300 space-y-2">
+                                <li><i class="fas fa-check text-green-400 mr-2"></i>Any programming language</li>
+                                <li><i class="fas fa-check text-green-400 mr-2"></i>Open-source libraries & frameworks</li>
+                                <li><i class="fas fa-check text-green-400 mr-2"></i>Pre-existing datasets</li>
+                                <li><i class="fas fa-check text-green-400 mr-2"></i>Cloud services & APIs</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold text-ai-cyan mb-3">Evaluation Criteria</h4>
+                            <ul class="text-gray-300 space-y-2">
+                                <li><i class="fas fa-star text-yellow-400 mr-2"></i>Innovation & Creativity</li>
+                                <li><i class="fas fa-star text-yellow-400 mr-2"></i>Technical Implementation</li>
+                                <li><i class="fas fa-star text-yellow-400 mr-2"></i>Problem-solving Approach</li>
+                                <li><i class="fas fa-star text-yellow-400 mr-2"></i>Presentation Quality</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: InstructionsSection -->
+
+    <!-- @COMPONENT: ContactSection -->
+    <section id="contact" class="py-20 section-hidden">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gradient">Contact Us</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Have questions? Need assistance? Our team is here to help you succeed.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Email Contact -->
+                <div class="glass-effect rounded-2xl p-8 text-center hover:scale-105 transform transition-all duration-300">
+                    <div class="w-16 h-16 bg-ai-blue rounded-xl flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-envelope text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-ai-cyan mb-4">Email Support</h3>
+                    <p class="text-gray-300 mb-4">Get in touch for any queries</p>
+                    <a href="mailto:codevault@hackathon.com" class="text-ai-cyan hover:text-white transition-colors duration-300">
+                        codevault@hackathon.com
+                    </a>
+                </div>
+                
+                <!-- Phone Contact -->
+                <div class="glass-effect rounded-2xl p-8 text-center hover:scale-105 transform transition-all duration-300">
+                    <div class="w-16 h-16 bg-ai-purple rounded-xl flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-phone text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-ai-cyan mb-4">Phone Support</h3>
+                    <p class="text-gray-300 mb-4">Call us for immediate assistance</p>
+                    <a href="tel:+919876543210" class="text-ai-cyan hover:text-white transition-colors duration-300">
+                        +91 98765 43210
+                    </a>
+                </div>
+                
+                <!-- Location -->
+                <div class="glass-effect rounded-2xl p-8 text-center hover:scale-105 transform transition-all duration-300">
+                    <div class="w-16 h-16 bg-ai-pink rounded-xl flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-map-marker-alt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-ai-cyan mb-4">Event Location</h3>
+                    <p class="text-gray-300 mb-4">Main auditorium & labs</p>
+                    <span class="text-ai-cyan">
+                        Tech Campus, Innovation Hub
+                    </span>
+                </div>
+            </div>
+            
+            <!-- FAQ Section -->
+            <div class="mt-16">
+                <div class="glass-effect rounded-2xl p-8 max-w-4xl mx-auto">
+                    <h3 class="text-2xl font-bold mb-8 text-center text-gradient">Frequently Asked Questions</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="text-lg font-semibold text-ai-cyan mb-2">Do I need a team to participate?</h4>
+                            <p class="text-gray-300 mb-4">No, individual registrations are welcome. We'll help match you with suitable teammates.</p>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold text-ai-cyan mb-2">What should I bring?</h4>
+                            <p class="text-gray-300 mb-4">Laptop, chargers, valid ID, and enthusiasm! We'll provide food, drinks, and workspace.</p>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold text-ai-cyan mb-2">Is there an entry fee?</h4>
+                            <p class="text-gray-300 mb-4">The event is completely free for all registered participants. Just bring your ideas!</p>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold text-ai-cyan mb-2">Can beginners participate?</h4>
+                            <p class="text-gray-300 mb-4">Absolutely! We welcome all skill levels and provide mentorship throughout the event.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: ContactSection -->
+
+    <!-- @COMPONENT: Footer -->
+    <footer class="py-12 border-t border-gray-700">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8 items-center">
+                <!-- Logo & Description -->
+                <div class="text-center md:text-left">
+                    <div class="flex items-center justify-center md:justify-start space-x-3 mb-4">
+                        <div class="w-10 h-10 ai-gradient rounded-lg flex items-center justify-center">
+                            <i class="fas fa-code text-white text-lg"></i>
+                        </div>
+                        <span class="text-2xl font-bold text-gradient">Code Vault</span>
+                    </div>
+                    <p class="text-gray-400">
+                        Unlocking the future of AI innovation through collaborative coding.
+                    </p>
+                </div>
+                
+                <!-- Social Media Links -->
+                <div class="text-center">
+                    <h4 class="text-lg font-semibold text-ai-cyan mb-4">Follow Us</h4>
+                    <div class="flex justify-center space-x-6">
+                        <a href="#" class="w-10 h-10 bg-ai-purple rounded-full flex items-center justify-center hover:scale-110 transform transition-all duration-300">
+                            <i class="fab fa-instagram text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-ai-blue rounded-full flex items-center justify-center hover:scale-110 transform transition-all duration-300">
+                            <i class="fab fa-twitter text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-ai-pink rounded-full flex items-center justify-center hover:scale-110 transform transition-all duration-300">
+                            <i class="fab fa-linkedin text-white"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- College/Department Info -->
+                <div class="text-center md:text-right">
+                    <div class="flex items-center justify-center md:justify-end space-x-3 mb-4">
+                        <div class="w-10 h-10 bg-white rounded-lg flex items-center justify-center">
+                            <i class="fas fa-university text-ai-dark text-lg"></i>
+                        </div>
+                        <span class="text-lg font-semibold text-white">Tech University</span>
+                    </div>
+                    <p class="text-gray-400">
+                        Department of Computer Science & Engineering
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-400">
+                    © 2025 Code Vault Hackathon. All rights reserved. | Organized by Tech University CSE Department
+                </p>
+            </div>
+        </div>
+    </footer>
+    <!-- @END_COMPONENT: Footer -->
+
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Smooth scrolling for registration button
+        function scrollToRegistration() {
+            document.getElementById('about').scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        }
+
+        // Scroll animations
+        (function() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('section-visible');
+                        entry.target.classList.remove('section-hidden');
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all sections with animation
+            document.querySelectorAll('.section-hidden').forEach(section => {
+                observer.observe(section);
+            });
+
+            // Navbar background on scroll
+            const navbar = document.querySelector('nav');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.style.background = 'rgba(15, 15, 35, 0.95)';
+                } else {
+                    navbar.style.background = 'rgba(255, 255, 255, 0.1)';
+                }
+            });
+        })();
+
+        // Close mobile menu when clicking nav links
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+
+        // Add subtle parallax effect to floating elements
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelectorAll('.animate-float');
+            const speed = 0.5;
+
+            parallax.forEach(element => {
+                const yPos = -(scrolled * speed);
+                element.style.transform = `translateY(${yPos}px)`;
+            });
+        });
+    </script>
+</body>
+</html>
