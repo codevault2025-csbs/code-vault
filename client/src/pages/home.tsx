@@ -18,7 +18,8 @@ import {
   Instagram,
   Twitter,
   Linkedin,
-  GraduationCap
+  GraduationCap,
+  Navigation
 } from "lucide-react";
 
 export default function Home() {
@@ -87,6 +88,7 @@ export default function Home() {
               <button onClick={() => scrollToSection('about')} className="hover:text-ai-cyan transition-colors duration-300">About</button>
               <button onClick={() => scrollToSection('instructions')} className="hover:text-ai-cyan transition-colors duration-300">Instructions</button>
               <button onClick={() => scrollToSection('sponsors')} className="hover:text-ai-cyan transition-colors duration-300">Sponsors</button>
+              <button onClick={() => scrollToSection('location')} className="hover:text-ai-cyan transition-colors duration-300">Location</button>
               <button onClick={() => scrollToSection('contact')} className="hover:text-ai-cyan transition-colors duration-300">Contact</button>
             </div>
             
@@ -110,12 +112,26 @@ export default function Home() {
                 <button onClick={() => scrollToSection('about')} className="text-left hover:text-ai-cyan transition-colors duration-300">About</button>
                 <button onClick={() => scrollToSection('instructions')} className="text-left hover:text-ai-cyan transition-colors duration-300">Instructions</button>
                 <button onClick={() => scrollToSection('sponsors')} className="text-left hover:text-ai-cyan transition-colors duration-300">Sponsors</button>
+                <button onClick={() => scrollToSection('location')} className="text-left hover:text-ai-cyan transition-colors duration-300">Location</button>
                 <button onClick={() => scrollToSection('contact')} className="text-left hover:text-ai-cyan transition-colors duration-300">Contact</button>
               </div>
             </div>
           )}
         </div>
       </nav>
+
+      {/* Floating Particles Background */}
+      <div className="floating-particles fixed inset-0 z-0">
+        <div className="particle"></div>
+        <div className="particle"></div>
+        <div className="particle"></div>
+        <div className="particle"></div>
+        <div className="particle"></div>
+        <div className="particle"></div>
+        <div className="particle"></div>
+        <div className="particle"></div>
+        <div className="particle"></div>
+      </div>
 
       {/* Hero Section */}
       <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
@@ -125,51 +141,57 @@ export default function Home() {
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-ai-cyan/25 rounded-full blur-3xl animate-float-slow"></div>
         </div>
         
+        {/* Orbiting Elements */}
+        <div className="absolute top-1/4 left-1/4 w-4 h-4 bg-ai-cyan rounded-full animate-orbit opacity-60"></div>
+        <div className="absolute top-3/4 right-1/4 w-3 h-3 bg-ai-pink rounded-full animate-reverse-orbit opacity-40"></div>
+        <div className="absolute top-1/2 right-1/3 w-2 h-2 bg-ai-purple rounded-full animate-orbit opacity-50" style={{animationDelay: '-10s'}}></div>
+        
         <div className="container mx-auto px-6 text-center relative z-10">
           <div className="animate-fade-in">
-            <div className="w-32 h-32 ai-gradient rounded-2xl mx-auto mb-8 flex items-center justify-center animate-glow">
+            <div className="w-32 h-32 ai-gradient rounded-2xl mx-auto mb-8 flex items-center justify-center animate-pulse-glow">
               <Brain className="text-white" size={60} />
             </div>
             
-            <h1 className="text-6xl md:text-8xl font-bold mb-6 text-gradient animate-slide-up">
+            <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold mb-6 text-gradient animate-slide-up px-4">
               Code Vault
             </h1>
             
-            <p className="text-xl md:text-2xl text-gray-300 mb-8 animate-slide-up-delayed">
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-300 mb-8 animate-slide-up-delayed px-4 text-center">
               Unlock the Future of AI Innovation
             </p>
             
-            <div className="text-lg md:text-xl text-ai-cyan mb-12 animate-slide-up-slow">
-              <div className="flex items-center justify-center space-x-4 mb-2">
-                <Calendar size={20} />
-                <span>September 19-20, 2025</span>
+            <div className="text-base sm:text-lg md:text-xl text-ai-cyan mb-12 animate-slide-up-slow px-4">
+              <div className="flex items-center justify-center space-x-2 sm:space-x-4 mb-2 flex-wrap">
+                <Calendar size={16} className="sm:w-5 sm:h-5" />
+                <span className="text-center">September 19-20, 2025</span>
               </div>
-              <div className="flex items-center justify-center space-x-4">
-                <Trophy size={20} />
-                <span>Prize Pool: ₹50,000</span>
+              <div className="flex items-center justify-center space-x-2 sm:space-x-4 flex-wrap">
+                <Trophy size={16} className="sm:w-5 sm:h-5" />
+                <span className="text-center">Prize Pool: ₹50,000</span>
               </div>
             </div>
             
             <Button 
               onClick={() => scrollToSection('about')} 
-              className="ai-gradient px-8 py-4 rounded-full text-white font-semibold text-lg hover:scale-105 transform transition-all duration-300 animate-slide-up-final shadow-2xl"
+              className="ai-gradient px-6 sm:px-8 py-3 sm:py-4 rounded-full text-white font-semibold text-sm sm:text-lg hover:scale-105 transform transition-all duration-300 animate-slide-up-final shadow-2xl mx-4"
             >
-              Register Now - Limited Seats!
+              <span className="hidden sm:inline">Register Now - Limited Seats!</span>
+              <span className="sm:hidden">Register Now!</span>
               <Rocket className="ml-2" size={16} />
             </Button>
             
             {/* Sponsor Logos */}
-            <div className="mt-16 animate-fade-in">
-              <p className="text-gray-400 text-sm mb-6">Proudly Sponsored By</p>
-              <div className="flex items-center justify-center space-x-12">
-                <div className="w-20 h-20 bg-white/10 rounded-xl p-3 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-all duration-300">
+            <div className="mt-12 sm:mt-16 animate-fade-in px-4">
+              <p className="text-gray-400 text-xs sm:text-sm mb-6 text-center">Proudly Sponsored By</p>
+              <div className="flex items-center justify-center space-x-6 sm:space-x-12">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/10 rounded-xl p-2 sm:p-3 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-all duration-300">
                   <img 
                     src="/assets/sponsors/techcorp-logo.png" 
                     alt="TechCorp" 
                     className="w-full h-full object-contain opacity-80 hover:opacity-100 transition-opacity duration-300"
                   />
                 </div>
-                <div className="w-20 h-20 bg-white/10 rounded-xl p-3 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-all duration-300">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/10 rounded-xl p-2 sm:p-3 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-all duration-300">
                   <img 
                     src="/assets/sponsors/innovatelabs-logo.png" 
                     alt="InnovateLabs" 
@@ -192,7 +214,7 @@ export default function Home() {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             <Card className="glass-effect border-0 hover:scale-105 transform transition-all duration-300">
               <CardContent className="p-8 text-center">
                 <div className="w-16 h-16 ai-gradient rounded-xl flex items-center justify-center mb-6 mx-auto">
@@ -258,7 +280,7 @@ export default function Home() {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 sm:gap-12 max-w-4xl mx-auto">
             <Card className="glass-effect border-0 hover:scale-105 transform transition-all duration-300">
               <CardContent className="p-8 text-center">
                 <div className="w-24 h-24 mx-auto mb-6 bg-white/10 rounded-2xl p-4 backdrop-blur-sm border border-white/20">
@@ -319,7 +341,7 @@ export default function Home() {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6">
             {[
               {
                 number: "1",
@@ -403,6 +425,91 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Location Section */}
+      <section id="location" className="py-20 fade-on-scroll bg-slate-900/60 backdrop-blur-sm">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gradient">Event Location</h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Join us at our state-of-the-art venue equipped with high-speed internet, power outlets, and all amenities needed for 24 hours of coding.
+            </p>
+          </div>
+          
+          <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 max-w-6xl mx-auto">
+            {/* Location Details */}
+            <Card className="glass-effect border-0 hover:scale-105 transform transition-all duration-300">
+              <CardContent className="p-6 sm:p-8">
+                <div className="flex items-center mb-6">
+                  <div className="w-16 h-16 bg-ai-purple rounded-xl flex items-center justify-center mr-4">
+                    <MapPin className="text-white" size={32} />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-ai-cyan mb-2">Tech Innovation Hub</h3>
+                    <p className="text-gray-300">Main Event Venue</p>
+                  </div>
+                </div>
+                
+                <div className="space-y-4 text-gray-300">
+                  <div className="flex items-start space-x-3">
+                    <Navigation className="text-ai-cyan mt-1 flex-shrink-0" size={20} />
+                    <div>
+                      <p className="font-semibold text-white mb-1">Address</p>
+                      <p>123 Innovation Drive, Tech City<br />Mumbai, Maharashtra 400001</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start space-x-3">
+                    <Calendar className="text-ai-cyan mt-1 flex-shrink-0" size={20} />
+                    <div>
+                      <p className="font-semibold text-white mb-1">Event Duration</p>
+                      <p>September 19, 2025 - 9:00 AM<br />to September 20, 2025 - 10:00 AM</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start space-x-3">
+                    <Users className="text-ai-cyan mt-1 flex-shrink-0" size={20} />
+                    <div>
+                      <p className="font-semibold text-white mb-1">Facilities</p>
+                      <p>High-speed WiFi, Power outlets, 24/7 Food & Beverages, Rest areas, Presentation screens</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <Button className="w-full mt-8 ai-gradient hover:scale-105 transform transition-all duration-300">
+                  <Navigation className="mr-2" size={16} />
+                  Get Directions
+                </Button>
+              </CardContent>
+            </Card>
+            
+            {/* Google Maps */}
+            <Card className="glass-effect border-0 overflow-hidden">
+              <CardContent className="p-0">
+                <div className="relative h-96 bg-slate-800/50">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.5571834765147!2d72.8776559!3d19.0759899!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c9f7d7f4b353%3A0x7e8f1c4c3a4b9c9f!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1642765432109!5m2!1sen!2sin"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    className="rounded-lg"
+                  ></iframe>
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 to-transparent pointer-events-none"></div>
+                </div>
+                <div className="p-6 bg-slate-800/30 backdrop-blur-sm">
+                  <h4 className="text-lg font-semibold text-ai-cyan mb-2">Parking & Transportation</h4>
+                  <p className="text-gray-300 text-sm">
+                    Free parking available on-site. Metro station 5 minutes walk. Shuttle service from major transport hubs.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section id="contact" className="py-20 fade-on-scroll bg-slate-800/20">
         <div className="container mx-auto px-6">
@@ -413,7 +520,7 @@ export default function Home() {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             <Card className="glass-effect border-0 hover:scale-105 transform transition-all duration-300">
               <CardContent className="p-8 text-center">
                 <div className="w-16 h-16 bg-ai-blue rounded-xl flex items-center justify-center mb-6 mx-auto">
