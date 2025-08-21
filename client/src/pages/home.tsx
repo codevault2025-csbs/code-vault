@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { 
   Calendar, 
   Trophy, 
@@ -669,6 +669,9 @@ export default function Home() {
             <DialogTitle className="text-2xl font-bold text-gradient text-center pr-8">
               Registration Portal
             </DialogTitle>
+            <DialogDescription className="text-center text-gray-300 mt-2">
+              Choose your college to proceed with registration
+            </DialogDescription>
           </DialogHeader>
           
           <div className="py-6 space-y-6">
@@ -683,27 +686,27 @@ export default function Home() {
               <h3 className="text-lg font-semibold text-white text-center">Are you from:</h3>
               
               <div className="space-y-3">
-                <Button 
-                  onClick={() => {
-                    alert("Redirecting to MIT Mysore registration portal...");
-                    setIsRegistrationDialogOpen(false);
-                  }}
-                  className="w-full bg-ai-purple hover:bg-ai-purple/80 text-white py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 border border-ai-purple/30"
+                <a 
+                  href="https://mit-mysore-registration.example.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full bg-ai-purple hover:bg-ai-purple/80 text-white py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 border border-ai-purple/30 flex items-center justify-center"
+                  onClick={() => setIsRegistrationDialogOpen(false)}
                 >
                   <GraduationCap className="mr-3" size={20} />
                   MIT Mysore
-                </Button>
+                </a>
                 
-                <Button 
-                  onClick={() => {
-                    alert("Redirecting to external college registration portal...");
-                    setIsRegistrationDialogOpen(false);
-                  }}
-                  className="w-full bg-ai-blue hover:bg-ai-blue/80 text-white py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 border border-ai-blue/30"
+                <a 
+                  href="https://external-college-registration.example.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full bg-ai-blue hover:bg-ai-blue/80 text-white py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 border border-ai-blue/30 flex items-center justify-center"
+                  onClick={() => setIsRegistrationDialogOpen(false)}
                 >
                   <Building2 className="mr-3" size={20} />
                   Other Colleges
-                </Button>
+                </a>
               </div>
             </div>
             
