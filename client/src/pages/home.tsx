@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { 
   Calendar, 
   Trophy, 
@@ -19,11 +20,14 @@ import {
   Twitter,
   Linkedin,
   GraduationCap,
-  Navigation
+  Navigation,
+  X,
+  Building2
 } from "lucide-react";
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isRegistrationDialogOpen, setIsRegistrationDialogOpen] = useState(false);
 
   useEffect(() => {
     const observerOptions = {
@@ -172,7 +176,7 @@ export default function Home() {
             </div>
             
             <Button 
-              onClick={() => scrollToSection('about')} 
+              onClick={() => setIsRegistrationDialogOpen(true)} 
               className="ai-gradient px-6 sm:px-8 py-3 sm:py-4 rounded-full text-white font-semibold text-sm sm:text-lg hover:scale-105 transform transition-all duration-300 animate-slide-up-final shadow-2xl mx-4"
             >
               <span className="hidden sm:inline">Register Now - Limited Seats!</span>
@@ -261,7 +265,10 @@ export default function Home() {
                   Limited seats available. Secure your spot in this premier AI hackathon experience.
                 </p>
                 <div className="flex justify-center">
-                  <Button className="ai-gradient px-6 sm:px-8 py-3 sm:py-4 rounded-full text-white font-semibold text-sm sm:text-lg hover:scale-105 transform transition-all duration-300 shadow-xl w-full sm:w-auto max-w-xs sm:max-w-none">
+                  <Button 
+                    onClick={() => setIsRegistrationDialogOpen(true)}
+                    className="ai-gradient px-6 sm:px-8 py-3 sm:py-4 rounded-full text-white font-semibold text-sm sm:text-lg hover:scale-105 transform transition-all duration-300 shadow-xl w-full sm:w-auto max-w-xs sm:max-w-none"
+                  >
                     <Users className="mr-2" size={16} />
                     <span className="hidden sm:inline">Register Now - Limited Seats Available!</span>
                     <span className="sm:hidden">Register Now!</span>
@@ -648,6 +655,66 @@ export default function Home() {
           </div>
         </div>
       </footer>
+
+      {/* Registration Dialog */}
+      <Dialog open={isRegistrationDialogOpen} onOpenChange={setIsRegistrationDialogOpen}>
+        <DialogContent className="glass-effect border-ai-cyan/20 bg-slate-900/95 backdrop-blur-lg max-w-md mx-auto">
+          <DialogHeader className="relative">
+            <button
+              onClick={() => setIsRegistrationDialogOpen(false)}
+              className="absolute top-0 right-0 w-8 h-8 rounded-full bg-ai-purple/20 hover:bg-ai-purple/40 flex items-center justify-center transition-all duration-300 hover:scale-110"
+            >
+              <X size={16} className="text-white" />
+            </button>
+            <DialogTitle className="text-2xl font-bold text-gradient text-center pr-8">
+              Registration Portal
+            </DialogTitle>
+          </DialogHeader>
+          
+          <div className="py-6 space-y-6">
+            <div className="text-center">
+              <p className="text-ai-cyan text-lg font-semibold mb-2">Welcome to Code Vault 2025!</p>
+              <p className="text-gray-300 text-sm leading-relaxed">
+                We're excited to have participants from various colleges join us. Students from MIT Mysore will have a separate registration process.
+              </p>
+            </div>
+            
+            <div className="space-y-4">
+              <h3 className="text-lg font-semibold text-white text-center">Are you from:</h3>
+              
+              <div className="space-y-3">
+                <Button 
+                  onClick={() => {
+                    alert("Redirecting to MIT Mysore registration portal...");
+                    setIsRegistrationDialogOpen(false);
+                  }}
+                  className="w-full bg-ai-purple hover:bg-ai-purple/80 text-white py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 border border-ai-purple/30"
+                >
+                  <GraduationCap className="mr-3" size={20} />
+                  MIT Mysore
+                </Button>
+                
+                <Button 
+                  onClick={() => {
+                    alert("Redirecting to external college registration portal...");
+                    setIsRegistrationDialogOpen(false);
+                  }}
+                  className="w-full bg-ai-blue hover:bg-ai-blue/80 text-white py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 border border-ai-blue/30"
+                >
+                  <Building2 className="mr-3" size={20} />
+                  Other Colleges
+                </Button>
+              </div>
+            </div>
+            
+            <div className="text-center pt-4 border-t border-ai-cyan/20">
+              <p className="text-xs text-gray-400">
+                Limited seats available • Register early to secure your spot
+              </p>
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }
