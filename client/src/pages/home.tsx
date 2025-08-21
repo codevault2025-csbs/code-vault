@@ -71,10 +71,10 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-ai-dark via-ai-darker to-slate-900 text-white font-inter">
+    <div className="min-h-screen w-full max-w-full overflow-x-hidden bg-gradient-to-br from-ai-dark via-ai-darker to-slate-900 text-white font-inter">
       {/* Navigation Bar */}
       <nav className="fixed top-0 w-full z-50 glass-effect transition-all duration-300">
-        <div className="container mx-auto px-6 py-4">
+        <div className="container mx-auto px-4 sm:px-6 py-4 max-w-full">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
               <div className="w-10 h-10 ai-gradient rounded-lg flex items-center justify-center">
@@ -146,7 +146,7 @@ export default function Home() {
         <div className="absolute top-3/4 right-1/4 w-3 h-3 bg-ai-pink rounded-full animate-reverse-orbit opacity-40"></div>
         <div className="absolute top-1/2 right-1/3 w-2 h-2 bg-ai-purple rounded-full animate-orbit opacity-50" style={{animationDelay: '-10s'}}></div>
         
-        <div className="container mx-auto px-6 text-center relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 text-center relative z-10 max-w-full">
           <div className="animate-fade-in">
             <div className="w-32 h-32 ai-gradient rounded-2xl mx-auto mb-8 flex items-center justify-center animate-pulse-glow">
               <Brain className="text-white" size={60} />
@@ -160,14 +160,14 @@ export default function Home() {
               Unlock the Future of AI Innovation
             </p>
             
-            <div className="text-base sm:text-lg md:text-xl text-ai-cyan mb-12 animate-slide-up-slow px-4">
+            <div className="text-base sm:text-lg md:text-xl text-ai-cyan mb-12 animate-slide-up-slow px-4 max-w-full">
               <div className="flex items-center justify-center space-x-2 sm:space-x-4 mb-2 flex-wrap">
-                <Calendar size={16} className="sm:w-5 sm:h-5" />
-                <span className="text-center">September 19-20, 2025</span>
+                <Calendar size={16} className="sm:w-5 sm:h-5 flex-shrink-0" />
+                <span className="text-center break-words">September 19-20, 2025</span>
               </div>
               <div className="flex items-center justify-center space-x-2 sm:space-x-4 flex-wrap">
-                <Trophy size={16} className="sm:w-5 sm:h-5" />
-                <span className="text-center">Prize Pool: ₹50,000</span>
+                <Trophy size={16} className="sm:w-5 sm:h-5 flex-shrink-0" />
+                <span className="text-center break-words">Prize Pool: ₹50,000</span>
               </div>
             </div>
             
@@ -183,7 +183,7 @@ export default function Home() {
             {/* Sponsor Logos */}
             <div className="mt-12 sm:mt-16 animate-fade-in px-4">
               <p className="text-gray-400 text-xs sm:text-sm mb-6 text-center">Proudly Sponsored By</p>
-              <div className="flex items-center justify-center space-x-6 sm:space-x-12">
+              <div className="flex items-center justify-center space-x-4 sm:space-x-6 md:space-x-12">
                 <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/10 rounded-xl p-2 sm:p-3 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-all duration-300">
                   <img 
                     src="/assets/sponsors/techcorp-logo.png" 
@@ -206,7 +206,7 @@ export default function Home() {
 
       {/* About Section */}
       <section id="about" className="py-20 fade-on-scroll bg-slate-900/50 backdrop-blur-sm">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 sm:px-6 max-w-full">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gradient">About Code Vault</h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -272,7 +272,7 @@ export default function Home() {
 
       {/* Sponsors Section */}
       <section id="sponsors" className="py-20 fade-on-scroll bg-slate-900/40 backdrop-blur-sm">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 sm:px-6 max-w-full">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gradient">Our Sponsors</h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -333,7 +333,7 @@ export default function Home() {
 
       {/* Instructions Section */}
       <section id="instructions" className="py-20 fade-on-scroll bg-slate-800/30">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 sm:px-6 max-w-full">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gradient">Event Instructions</h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -427,7 +427,7 @@ export default function Home() {
 
       {/* Location Section */}
       <section id="location" className="py-20 fade-on-scroll bg-slate-900/60 backdrop-blur-sm">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 sm:px-6 max-w-full">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gradient">Event Location</h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -512,7 +512,7 @@ export default function Home() {
 
       {/* Contact Section */}
       <section id="contact" className="py-20 fade-on-scroll bg-slate-800/20">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 sm:px-6 max-w-full">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gradient">Contact Us</h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -592,7 +592,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="py-12 border-t border-gray-700">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 sm:px-6 max-w-full">
           <div className="grid md:grid-cols-3 gap-8 items-center">
             {/* Logo & Description */}
             <div className="text-center md:text-left">
