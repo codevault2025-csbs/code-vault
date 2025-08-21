@@ -58,6 +58,9 @@
   --ai-cyan: hsl(187 85% 43%);
   --ai-dark: hsl(228 84% 5%);
   --ai-darker: hsl(251 84% 16%);
+  --ai-gradient-start: hsl(228 84% 8%);
+  --ai-gradient-mid: hsl(251 60% 12%);
+  --ai-gradient-end: hsl(251 40% 15%);
 }
 
 .dark {

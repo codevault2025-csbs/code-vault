@@ -70,7 +70,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-ai-dark via-ai-darker to-ai-purple text-white font-inter">
+    <div className="min-h-screen bg-gradient-to-br from-ai-dark via-ai-darker to-slate-900 text-white font-inter">
       {/* Navigation Bar */}
       <nav className="fixed top-0 w-full z-50 glass-effect transition-all duration-300">
         <div className="container mx-auto px-6 py-4">
@@ -119,10 +119,10 @@ export default function Home() {
 
       {/* Hero Section */}
       <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 left-10 w-72 h-72 ai-gradient rounded-full blur-3xl animate-float"></div>
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-ai-pink rounded-full blur-3xl animate-float-delayed"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-ai-cyan rounded-full blur-3xl animate-float-slow"></div>
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-ai-purple/30 rounded-full blur-3xl animate-float"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-ai-blue/20 rounded-full blur-3xl animate-float-delayed"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-ai-cyan/25 rounded-full blur-3xl animate-float-slow"></div>
         </div>
         
         <div className="container mx-auto px-6 text-center relative z-10">
@@ -183,7 +183,7 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 fade-on-scroll">
+      <section id="about" className="py-20 fade-on-scroll bg-slate-900/50 backdrop-blur-sm">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gradient">About Code Vault</h2>
@@ -249,7 +249,7 @@ export default function Home() {
       </section>
 
       {/* Sponsors Section */}
-      <section id="sponsors" className="py-20 fade-on-scroll">
+      <section id="sponsors" className="py-20 fade-on-scroll bg-slate-900/40 backdrop-blur-sm">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gradient">Our Sponsors</h2>
@@ -310,7 +310,7 @@ export default function Home() {
       </section>
 
       {/* Instructions Section */}
-      <section id="instructions" className="py-20 fade-on-scroll">
+      <section id="instructions" className="py-20 fade-on-scroll bg-slate-800/30">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gradient">Event Instructions</h2>
@@ -404,7 +404,7 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 fade-on-scroll">
+      <section id="contact" className="py-20 fade-on-scroll bg-slate-800/20">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gradient">Contact Us</h2>
