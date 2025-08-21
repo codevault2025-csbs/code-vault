@@ -464,7 +464,7 @@ export default function Home() {
                   Become a Sponsor
                 </h3>
                 <a
-                  href="https://sponsor-partnership.example.com"
+                  href="https://forms.gle/ChuepeGkS96cxumb6"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block border-2 border-ai-cyan text-ai-cyan hover:bg-ai-cyan hover:text-white transition-all duration-300 px-6 py-3 rounded-lg font-semibold"
@@ -987,7 +987,7 @@ export default function Home() {
 
               <div className="space-y-3">
                 <a
-                  href="https://mit-mysore-registration.example.com"
+                  href="https://forms.gle/AyxnkhofEJaj1ds56"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full bg-ai-purple hover:bg-ai-purple/80 text-white py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 border border-ai-purple/30 flex items-center justify-center"
@@ -998,7 +998,7 @@ export default function Home() {
                 </a>
 
                 <a
-                  href="https://external-college-registration.example.com"
+                  href="https://forms.gle/SmHdCHXKzmHX56jNA"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full bg-ai-blue hover:bg-ai-blue/80 text-white py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 border border-ai-blue/30 flex items-center justify-center"
